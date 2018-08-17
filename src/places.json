@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Służę Kawą",
+    "type": "coffee",
+    "latitude": 52.168338,
+    "longitude": 21.024252
+  },
+  {
+    "name": "Galeria Mokotów",
+    "type": "shopping center",
+    "latitude": 52.178802,
+    "longitude": 21.003447
+  },
+  {
+    "name": "Park Dreszera",
+    "type": "park",
+    "latitude": 52.197481,
+    "longitude": 21.021374
+  },
+  {
+    "name": "Królikarnia",
+    "type": "park",
+    "latitude": 52.189091,
+    "longitude": 21.028411
+  },
+  {
+    "name": "Łazarski",
+    "type": "university",
+    "latitude": 52.177682,
+    "longitude": 21.015687
+  },
+  {
+    "name": "Po Prostu",
+    "type": "art bistro",
+    "latitude": 52.184879,
+    "longitude": 21.025536
+  }
+]
