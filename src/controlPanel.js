@@ -47,8 +47,19 @@ class ControlPanel extends Component {
 
 openInfoWindow (location) {
   this.props.info(location);
+  // if (location.getAnimation() !== null) {
+  //       location.setAnimation(null);
+  //     } else {
+  //       location.setAnimation(window.google.maps.Animation.BOUNCE);
+  //           }
+ //  var flag = this.props.info(location);
+ // flag.setAnimation(window.google.maps.Animation.BOUNCE);
 }
 
+// toggleBounce(location) {
+//     var flag = this.props.info(location);
+//     flag.setAnimation(window.google.maps.Animation.BOUNCE);
+// }
 
 // Render controlPanel
 render() {

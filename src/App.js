@@ -85,12 +85,14 @@ class App extends Component {
         )}
 
          this.state.infoWindow.open(this.state.map, marker);
-         marker.setAnimation(window.google.maps.Animation.DROP);
-
+         marker.setAnimation(window.google.maps.Animation.BOUNCE);
+         setTimeout(() => {
+          marker.setAnimation(null);
+        }, 2500);
 
          this.state.infoWindow.addListener('closeClick', function () {
              this.state.infoWindow.setMarker(null);
-         });
+           });
 
          this.getInfo(url);
      }
