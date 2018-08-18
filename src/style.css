@@ -1,3 +1,39 @@
 #map {
-  width: 500px;
-  height: 500px; }
+  width: auto;
+  height: 500px;;
+}
+
+.controlPanel, .form {
+  width: 100%;
+}
+
+.input {
+  width: 80%;
+  height: 50px;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  width: 400px;
+  height: 80px;
+  margin-bottom: 1px;
+  margin-top: 1px;
+}
+
+a {
+  background-color: #222334;
+  height: 50px;
+  padding: 1.2em;
+  color: white;
+  text-decoration: none;
+  line-height: 1.5em;
+}
+
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
