@@ -1,8 +1,7 @@
 import React, {Component} from "react"
 
 class ControlPanel extends Component {
-
-  constructor () {
+  constructor() {
     super();
 
     this.state = {
@@ -16,13 +15,12 @@ class ControlPanel extends Component {
     this.setState({markers: this.props.markers});
   }
 
-
   display = () => {
-    var controlPanel = document.getElementsbyClassName('controlPanel');
-    if (controlPanel.style.display==='none') {
-      controlPanel.style.display = 'block'
+    var controlPanel = document.getElementsbyClassName("controlPanel");
+    if (controlPanel.style.display === "none") {
+      controlPanel.style.display = "block"
     } else {
-      controlPanel.style.display = 'none'
+      controlPanel.style.display = "none"
     }
   }
 
@@ -33,33 +31,21 @@ class ControlPanel extends Component {
     var newPoints = [];
 
     markers.forEach((location) => {
-      if(location.title.toLowerCase().indexOf(query.toLowerCase()) >=0) {
+      if(location.title.toLowerCase().indexOf(query.toLowerCase()) >= 0) {
         location.setVisible(true);
         newPoints.push(location);
       } else {
         location.setVisible(false);
       }
-    });
+    }
+  );
 
   this.setState({markers: newPoints});
-
 }
 
 openInfoWindow (location) {
   this.props.info(location);
-  // if (location.getAnimation() !== null) {
-  //       location.setAnimation(null);
-  //     } else {
-  //       location.setAnimation(window.google.maps.Animation.BOUNCE);
-  //           }
- //  var flag = this.props.info(location);
- // flag.setAnimation(window.google.maps.Animation.BOUNCE);
 }
-
-// toggleBounce(location) {
-//     var flag = this.props.info(location);
-//     flag.setAnimation(window.google.maps.Animation.BOUNCE);
-// }
 
 // Render controlPanel
 render() {
@@ -79,7 +65,8 @@ render() {
         {this.state.markers && this.state.markers.map((location, index) =>
           <li key={index}>
             <a href="#" onKeyPress={this.props.info.bind(this, location)}
-              onClick={this.props.info.bind(this, location)}>
+              onClick={this.props.info.bind(this, location)}
+              tabIndex="0">
               {location.title}
             </a>
           </li>

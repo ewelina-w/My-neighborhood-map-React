@@ -14,7 +14,6 @@ class App extends Component {
              infoWindow: ""
         };
 
-
         this.initMap = this.initMap.bind(this);
         this.createMarkers = this.createMarkers.bind(this);
         this.openInfoWindow = this.openInfoWindow.bind(this);
@@ -39,7 +38,6 @@ class App extends Component {
     }
 
     // Add markers on the map
-
     createMarkers (map) {
       let self = this;
       this.state.places.forEach(place=>{
@@ -51,21 +49,20 @@ class App extends Component {
         map: map,
         animation: window.google.maps.Animation.DROP,
         title: `${place.name} - ${place.type}`
-
       });
-      mark.addListener('click', function () {
+
+      mark.addListener('click', function() {
                self.openInfoWindow(mark);
            });
 
         let marker = this.state.markers;
         marker.push(mark);
-
         this.setState({markers: marker});
-        })}
+        }
+      )
+    }
 
-
-
-    // // Open InfoWindow
+    // Open InfoWindow
     openInfoWindow(marker='') {
       // Login requirements for foursquare
       const clientId = "TR3D1HXN0WMNSYWE0OOTEYB1X0JR05Q2SCPL50NDY3NVIXNX";
@@ -79,6 +76,7 @@ class App extends Component {
          "," +
          marker.getPosition().lng() +
          "&limit=1";
+
       if (this.state.infoWindow.marker !== marker) {
            this.setState((state) =>
               state.infoWindow.marker = marker
@@ -86,6 +84,7 @@ class App extends Component {
 
          this.state.infoWindow.open(this.state.map, marker);
          marker.setAnimation(window.google.maps.Animation.BOUNCE);
+         // Bounce 4 times and stop
          setTimeout(() => {
           marker.setAnimation(null);
         }, 2500);
@@ -97,14 +96,10 @@ class App extends Component {
          this.getInfo(url);
      }
 
-
 // Get info for infoWindow
-
 getInfo (url) {
-
   let flag = this.state.infoWindow;
   let position;
-
   fetch(url)
     // Manage errors
     .then(function(response) {
@@ -132,12 +127,16 @@ getInfo (url) {
                           name + address + contact + description
                       "</div>";
         flag.setContent (info);
-      });
-    })
+      }
+    );
+    }
+  )
       .catch(function(error) {
         flag.setContent("Sorry, there is a problem with loading data")
-      });
+      }
+    );
   }
+
   render() {
   return (
     <div>
@@ -148,10 +147,10 @@ getInfo (url) {
       </ControlPanel>
       <div id="map" role="application"/>
     </div>
-)
+    )
+  }
+}
 
-}
-}
 // Load the google maps
 function createMap(url) {
     let tag = window.document.getElementsByTagName("script")[0];
@@ -162,7 +161,6 @@ function createMap(url) {
         document.write("Ups! There is a problem with loading Google Maps");
     };
     tag.parentNode.insertBefore(script, tag);
-
 }
 
 export default App;
