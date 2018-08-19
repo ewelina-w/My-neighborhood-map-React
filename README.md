@@ -2,7 +2,7 @@
 ===============================
 
 ## Motivation
-This project was build in terms of Front-End Web Developer Nanodegree Program. It is the final project. It is coded in React and contains Google Map API as well as Foursquare API.
+This project was built in terms of Front-End Web Developer Nanodegree Program. It is the final project. It is coded in React and contains Google Map API as well as Foursquare API.
 
 ## The app's functionality
 It is a single-page application featuring a map of my neighborhood. One can use: map markers to identify popular locations, a filter option to easily discover these locations and a list view to support simple browsing of all locations.
