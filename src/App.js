@@ -122,9 +122,10 @@ getInfo (url) {
         if (position.rating) {
           description = `<p>${position.rating}</p>`
         };
+        var source = "Find more information on Foursquare";
         var info = "<div id='marker'>" +
                           "<h2>" + flag.marker.title + "</h2>" +
-                          name + address + contact + description
+                          name + address + contact + description + source
                       "</div>";
         flag.setContent (info);
       }
